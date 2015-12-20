@@ -1,5 +1,11 @@
-package com.flash.web.base.response;
+package com.flash.web.base.resp;
 
+/**
+ * 基础返回数据
+ * @author leon
+ *
+ * @param <T>
+ */
 public class BaseResponse<T> {
 
 	public BaseResponse() {
@@ -20,14 +26,15 @@ public class BaseResponse<T> {
 		this.data = data;
 	}
 
-	public static <E> BaseResponse<E> success(){
-		return new BaseResponse<>(200, "success" ,null);
+	public static <E> BaseResponse<E> success() {
+		return new BaseResponse<E>(200, "success", null);
 	}
+
 	public static <E> BaseResponse<E> success(E data) {
 		return new BaseResponse<E>(200, "success", data);
 	}
-	
-	public static <E> BaseResponse<E> success(String msg , E data){
+
+	public static <E> BaseResponse<E> success(String msg, E data) {
 		return new BaseResponse<E>(200, msg, data);
 	}
 
@@ -39,9 +46,10 @@ public class BaseResponse<T> {
 		return new BaseResponse<E>(500, msg, data);
 	}
 
-	public static <E> BaseResponse<E> faild(Integer code, String msg, E data){
+	public static <E> BaseResponse<E> faild(Integer code, String msg, E data) {
 		return new BaseResponse<E>(code, msg, data);
 	}
+
 	public static <E> BaseResponse<E> error() {
 		return new BaseResponse<E>(400, "error", null);
 	}

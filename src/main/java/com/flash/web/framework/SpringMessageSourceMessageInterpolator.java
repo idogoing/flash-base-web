@@ -13,13 +13,11 @@ public class SpringMessageSourceMessageInterpolator implements MessageInterpolat
 
     private MessageSource messageSource;
 
-    @Override
     public String interpolate(String messageTemplate, Context context) {
     	
         return messageSource.getMessage(messageTemplate, new Object[]{}, Locale.getDefault());
     }
 
-    @Override
     public String interpolate(String messageTemplate, Context context, Locale locale) {
     	if (messageTemplate == null){
     		return null;
@@ -32,12 +30,10 @@ public class SpringMessageSourceMessageInterpolator implements MessageInterpolat
         return messageSource.getMessage(messageTemplate, new Object[]{}, locale);
     }
 
-    @Override
     public void setMessageSource(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
 
-    @Override
     public void afterPropertiesSet() throws Exception {
         if (messageSource == null) {
             throw new IllegalStateException("MessageSource was not injected, could not initialize "

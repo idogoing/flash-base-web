@@ -23,13 +23,11 @@ public class CrossDomainFilter implements Filter {
 
 	private static Logger logger = LoggerFactory.getLogger(CrossDomainFilter.class);
 
-	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		logger.info("CorossDomainFilter　init");
 
 	}
 
-	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) resp;
@@ -38,7 +36,6 @@ public class CrossDomainFilter implements Filter {
 		logger.info("CorossDomainFilter　请求通过");
 	}
 
-	@Override
 	public void destroy() {
 
 	}
