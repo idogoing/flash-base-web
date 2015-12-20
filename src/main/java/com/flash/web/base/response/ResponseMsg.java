@@ -1,4 +1,4 @@
-package com.pirecing.web.base.response;
+package com.flash.web.base.response;
 
 public class ResponseMsg {
 	public static final String MSG_SUCCESS = "success";

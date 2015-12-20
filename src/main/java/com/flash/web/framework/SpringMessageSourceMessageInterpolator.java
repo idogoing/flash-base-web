@@ -1,4 +1,4 @@
-package com.pirecing.web.framework;
+package com.flash.web.framework;
 
 import java.util.Locale;
 
